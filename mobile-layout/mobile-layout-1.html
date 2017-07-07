@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>mobile-layout-1</title>
+  <meta name="viewport"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .box {
+      background-color: red;
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    
+  </div>
+  <script>
+    var scale = 1 / window.devicePixelRatio;
+    document.querySelector('meta[name="viewport"]').setAttribute('content',  'width=device-width, initial-scale=' + scale + ', maximum-scale=' + scale + ', user-scalable=no')
+  </script>
+</body>
+</html>
