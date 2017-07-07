@@ -11,8 +11,8 @@
     }
     .box {
       background-color: red;
-      width: 200px;
-      height: 200px;
+      width: 2.667rem;
+      height: 2.667rem;
     }
   </style>
 </head>
@@ -23,6 +23,7 @@
   <script>
     var scale = 1 / window.devicePixelRatio;
     document.querySelector('meta[name="viewport"]').setAttribute('content',  'width=device-width, initial-scale=' + scale + ', maximum-scale=' + scale + ', user-scalable=no')
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 10 + 'px'
   </script>
 </body>
 </html>
