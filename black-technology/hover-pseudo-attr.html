@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>hover pseudo data attr</title>
+  <link rel="stylesheet" type="text/css" href="./css/reset.css">
+  <style>
+    body {
+      text-align: center;
+    }
+    div{
+      position: relative;
+      width: 100px;
+      margin: 30px auto;
+      text-align: center;
+      border: 1px solid #ccc;  
+    }
+    div:hover:after{
+      content: attr(data-msg);
+      position: absolute;
+      font-size: 12px;
+      width: 200%;
+      line-height: 30px;
+      text-align: center;
+      left: 0;
+      top: 25px;
+      border: 1px solid green;
+    }
+    /* 显示没有文本值但是href属性具有链接的a元素的链接 */
+    a[href^="http"]:empty::before {
+      content: attr(href);
+    }
+  </style>
+</head>
+<body>
+  <h2>Use pseudo to get hover attr</h2>
+  <div data-msg="open file in github desktop" class="hover">hover me</div>
+  <a href="http://www.baidu.com"></a>
+</body>
+</html>
