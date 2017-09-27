@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+  <title>ios fluency scroll</title>
+  <!-- <link rel="stylesheet" href="./css/reset.css"> -->
+  <style>
+    .wrap {
+      position: relative;
+      left: 0;
+      top: 0;
+      width: 300px;
+      height: 400px;
+      margin: 100px auto;
+      overflow: scroll;
+      -webkit-overflow-scrolling: touch;
+      /* fix position & webkit scroll combine bug  */
+      z-index: 1;
+    }
+    .content {
+      height: 600px
+    }
+    .custom {
+      border-color: #ccc;
+      caret-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi odit aliquid illo natus eum, recusandae dolore qui quisquam voluptas, beatae iusto veritatis id pariatur quaerat autem in vitae, quo labore! Officia nihil deleniti voluptate id, a! Nulla quam, reiciendis modi vero obcaecati autem tempore, unde, non ullam incidunt necessitatibus? Impedit saepe amet eum numquam mollitia quam animi suscipit quaerat, vel ipsum, voluptatem nesciunt, fugit, inventore perferendis porro dolores quae tempore? Dolorum voluptatum ipsa quae laudantium deleniti ipsum eius odio veniam, quam recusandae voluptates sunt adipisci quas placeat suscipit commodi ut nam incidunt non, similique. Odit, nam ad sed maxime voluptas iusto magni officiis molestiae quaerat neque ex perspiciatis, nisi culpa expedita incidunt voluptatibus eaque aut in delectus id hic quis. Earum voluptates culpa ducimus, natus deleniti, amet voluptatibus velit, voluptas neque possimus molestias nemo nam, reiciendis quos eaque aspernatur magni! Autem perferendis molestiae quas quae mollitia labore earum rem suscipit, in ipsa, necessitatibus ut eum illo. Architecto laudantium magnam repudiandae facere enim fugit sunt itaque error veniam nesciunt ullam unde soluta porro cumque, nemo voluptatum excepturi tenetur sit quibusdam rem repellendus debitis. Id animi enim, vero cupiditate ipsum vel distinctio dignissimos repellendus cumque unde, praesentium ducimus nihil natus iste eum.
+    </div>
+  </div>
+  <input type="text" class="custom">
+</body>
+</html>
