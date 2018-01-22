@@ -27,26 +27,41 @@
 
     /**
      * 画一个坐标系统
-     * dx: 竖线的间隔，dy: 横线的间隔
+     * stepX: x轴的网格间距，stepY是y轴的网格间距
      */
-    function drawGrid (dx, dy) {
+    function drawGrid (color, stepX, stepY) {
       // 横线和竖线的间距
       ctx.save()
-      var dx = 50, dy = 50;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 0.5;
 
+      for (var i = stepX + 0.5; i < canvas.width; i += stepX) {
+        ctx.beginPath();
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i, canvas.height);
+        ctx.stroke();
+      }
+
+      for (var i = stepY + 0.5; i < canvas.height; i += stepY) {
+        ctx.beginPath();
+        ctx.moveTo(0, i);
+        ctx.lineTo(canvas.width, i);
+        ctx.stroke();
+      }
+
+      ctx.restore()
+    }
+
+    function drawScreen () {
+      var dx = 50, dy = 50;
       // 初始坐标原点
       var x = 0.5, y = 0.5, w = canvas.width + .5, h = canvas.height + .5;
       var xy = 50;
       ctx.lineWidth = 1;
-
+      
       // 画横线
       while (y < h) {
         y += dy
-        ctx.moveTo(x, y);
-        ctx.lineTo(w, y);
-        ctx.storkeStyle = '#000'
-        ctx.stroke();
-
         // 竖坐标的数字
         ctx.font = '20px Calibri';
         ctx.textAlign = 'left';
@@ -58,24 +73,18 @@
       y = 0;
       xy = 50;
       while (x < w) {
-        // ctx.beginPath()
         x += dx
-        ctx.moveTo(x, y);
-        ctx.lineTo(x, h);
-        ctx.storkeStyle = '#000'
-        ctx.stroke();
-
         // 横坐标的数字
         ctx.font = '20px Calibri';
         ctx.textAlign = 'right';
         ctx.fillText(xy, x, 20);
         xy += 50;
-        // ctx.closePath()
       }
-      ctx.restore()
+
+      drawGrid('#00', 50, 50)
     }
 
-    drawGrid()
+    drawScreen()
 
     // 画直线
     function drawLine () {
